@@ -1,8 +1,7 @@
 import schedule
 import time
-import threading
-from flask import Flask
-import signal
+# import threading
+# import signal
 import sys
 import requests
 
@@ -35,7 +34,7 @@ def job():
     if msg:
         notify_discord_webhook(msg)
 
-schedule.every(10).minutes.do(job)
+# schedule.every(10).minutes.do(job)
 # schedule.every(30).seconds.do(job)
 
 
@@ -58,12 +57,12 @@ if __name__ == "__main__":
 
     job()  # 執行一次
     
-    # 設定停止信號處理
-    signal.signal(signal.SIGINT, signal_handler)
+    # # 設定停止信號處理
+    # signal.signal(signal.SIGINT, signal_handler)
 
-    # 初始化 running 變數
-    running = True
+    # # 初始化 running 變數
+    # running = True
 
-    # 啟動定時任務的背景執行緒
-    schedule_thread = threading.Thread(target=run_schedule)
-    schedule_thread.start()
+    # # 啟動定時任務的背景執行緒
+    # schedule_thread = threading.Thread(target=run_schedule)
+    # schedule_thread.start()
