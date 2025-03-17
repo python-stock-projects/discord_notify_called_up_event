@@ -1,7 +1,4 @@
-import schedule
 import time
-# import threading
-# import signal
 import sys
 import requests
 
@@ -34,17 +31,7 @@ def job():
     if msg:
         notify_discord_webhook(msg)
 
-# schedule.every(10).minutes.do(job)
-# schedule.every(30).seconds.do(job)
 
-
-def run_schedule():
-    while True:
-        try:
-            schedule.run_pending()
-        except Exception as e:
-            print(f"Error running scheduled job: {e}")
-        time.sleep(1)
 
 def signal_handler(sig, frame):
     global running
