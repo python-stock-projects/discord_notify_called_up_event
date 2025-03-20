@@ -1,4 +1,4 @@
-name: Run "批准" Every 3 Hours
+name: Run "催繳" Every 3 Hours
 
 on:
   schedule:
